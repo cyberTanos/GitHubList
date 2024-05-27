@@ -50,6 +50,10 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
+    // Kotlin
+    implementation("androidx.fragment:fragment-ktx:1.7.1")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+
     // View Model
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0")
 
