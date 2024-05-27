@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id ("dagger.hilt.android.plugin")
 }
 
 android {
@@ -8,6 +10,7 @@ android {
     compileSdk = 34
     defaultConfig.minSdk = 29
     defaultConfig.vectorDrawables.useSupportLibrary = true
+    buildFeatures.viewBinding = true
 
     buildTypes {
         release {
@@ -46,4 +49,18 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // View Model
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0")
+
+    // Internet
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:3.12.0")
+    implementation("com.google.code.gson:gson:2.10")
+
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.50")
+    kapt("com.google.dagger:hilt-compiler:2.50")
+
 }
